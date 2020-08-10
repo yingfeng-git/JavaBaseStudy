@@ -2,6 +2,8 @@ package JianZhi_7;
 
 import base.TreeNode;
 
+import java.util.LinkedList;
+
 /**
  * 题目给出的参数有先根遍历和中根遍历（树的所有元素都不重复，这个条件很重要，不然这个方法没法做）
  * 根据遍历规则：
@@ -11,16 +13,17 @@ import base.TreeNode;
  *    第一个元素分别为根节点的左右子节点
  * 4. 在递归的时候，需要找到先根遍历的开始、结束位置，中根遍历的开始、结束位置。然后当开始/结束位置开始
  *    重叠的时候就意味着递归的结束，返回null。
+ * 优化的点：用LinkedList复制一份inorder，可以快速找到i的值
  */
 public class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return buildTree(preorder,0, preorder.length-1,
-                         inorder, 0, preorder.length-1);
+                inorder, 0, preorder.length-1);
     }
 
     public TreeNode buildTree(int[] preorder, int preStart, int preEnd,
                               int[] inorder, int inStart, int inEnd){
-        if(preStart == preEnd || preorder.length == 0){
+        if(preStart > preEnd || inStart > inEnd){
             return null;
         }
         TreeNode tree = new TreeNode(preorder[preStart]);
