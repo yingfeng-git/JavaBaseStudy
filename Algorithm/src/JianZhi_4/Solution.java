@@ -7,7 +7,6 @@ class Solution {
             int l = 0, r = row.length;
             while(l <= r){
                 int mid = (l + r) / 2;
-                // System.out.println(row[mid] + " " + l + " " + r);
                 if (mid > row.length - 1){
                     break;
                 }else if (target == row[mid]){
@@ -35,7 +34,6 @@ class Solution {
                 x--;
             }
         }
-
         return false;
     }
 

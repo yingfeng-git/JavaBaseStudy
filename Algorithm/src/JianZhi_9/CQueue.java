@@ -1,5 +1,8 @@
 package JianZhi_9;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -33,8 +36,8 @@ class CQueue {
 }
 
 class CQueue2 {
-    Stack<Integer> writerStack = new Stack<>();
-    Stack<Integer> deleteStack = new Stack<>();
+    Deque<Integer> writerStack = new LinkedList<>();
+    Deque<Integer> deleteStack = new LinkedList<>();
     public CQueue2() {
     }
 
@@ -52,8 +55,8 @@ class CQueue2 {
 }
 
 class CQueue3 {
-    Stack<Integer> writerStack = new Stack<>();
-    Stack<Integer> deleteStack = new Stack<>();
+    Deque<Integer> writerStack = new LinkedList<>();
+    Deque<Integer> deleteStack = new LinkedList<>();
     public CQueue3() {
     }
 

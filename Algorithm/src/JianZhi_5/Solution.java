@@ -14,6 +14,7 @@ class Solution {
         return stringBuilder.toString();
     }
 
+
     public static void main(String[] args) {
         Solution s = new Solution();
         String str = "solution a";

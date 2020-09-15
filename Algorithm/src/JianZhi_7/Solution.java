@@ -2,9 +2,6 @@ package JianZhi_7;
 
 import base.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.concurrent.locks.StampedLock;
 
 /**
  * 题目给出的参数有先根遍历和中根遍历（树的所有元素都不重复，这个条件很重要，不然这个方法没法做）
@@ -19,7 +16,7 @@ import java.util.concurrent.locks.StampedLock;
  */
 public class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        return buildTree(preorder,0, preorder.length-1,
+        return buildTree(preorder,0, preorder.length - 1,
                 inorder, 0, preorder.length-1);
     }
 
@@ -28,6 +25,7 @@ public class Solution {
         if(preStart > preEnd || inStart > inEnd){
             return null;
         }
+
         TreeNode tree = new TreeNode(preorder[preStart]);
 
         for (int i = inStart; i <= inEnd; i++) {
@@ -36,24 +34,6 @@ public class Solution {
                 tree.right = buildTree(preorder, i-inStart+preStart+1, preEnd, inorder, i+1, inEnd);
             }
         }
-//        StampedLock
         return tree;
     }
-    /*
-
-     Computes key.hashCode() and spreads (XORs) higher bits of hash to lower.  Because the table uses power-of-two masking, sets of
-     hashes that vary only in bits above the current mask will
-     always collide. (Among known examples are sets of Float keys
-     holding consecutive whole numbers in small tables.)  So we
-     apply a transform that spreads the impact of higher bits
-     downward. There is a tradeoff between speed, utility, and
-     quality of bit-spreading. Because many common sets of hashes
-     are already reasonably distributed (so don't benefit from
-     spreading), and because we use trees to handle large sets of
-     collisions in bins, we just XOR some shifted bits in the
-     cheapest possible way to reduce systematic lossage, as well as
-     to incorporate impact of the highest bits that would otherwise
-     never be used in index calculations because of table bounds.
-
-     */
 }

@@ -66,6 +66,21 @@ public class Solution {
         return res;
     }
 
+    public static int[] reversePrint4(ListNode head) {
+        Deque<ListNode> stack = new ArrayDeque<>();
+        while(head != null){
+            stack.push(head);
+            head = head.next;
+        }
+
+        int[] ans = new int[stack.size()];
+
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = stack.pop().val;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int[] a = new int[]{1, 3, 2};
         ListNode p = new ListNode(a[0]);
@@ -75,7 +90,7 @@ public class Solution {
             p = p.next;
         }
 
-        System.out.println(Arrays.toString(reversePrint(head)));
+        System.out.println(Arrays.toString(reversePrint4(head)));
 
     }
 }

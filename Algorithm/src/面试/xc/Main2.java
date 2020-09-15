@@ -1,4 +1,4 @@
-package xc2;
+package 面试.xc;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -50,7 +50,7 @@ class WorkflowNode {
 //HEAD`0`A,B,C|A`10`END|B`20`END|C`30`D,E|D`20`END|E`31`END
 //HEAD`0`A,B,C|A`10`END|B`20`G,F|G`22`END|F`23`END|C`30`D,E|D`20`END|E`31`END
 
-public class Main {
+public class Main2 {
     static int maxTime = 0;
     static int time = 0;
 

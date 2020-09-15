@@ -13,7 +13,7 @@ class Solution {
         int[] list = new int[nums.length];
         for (int num : nums) {
             if (list[num] == 0) {
-                list[num]++;
+                list[num] = 1;
             }else{
                 return num;
             }
