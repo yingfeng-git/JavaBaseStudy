@@ -19,6 +19,11 @@ public class Main1 {
         return maxLen;
     }
 
+    /**
+     *
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
@@ -26,6 +31,10 @@ public class Main1 {
             sb.append(in.next());
         }
         System.out.println(lengthOfLongestSubstring(sb.toString()));
+
+        for(int i = 0,j=1;j < 10; i++,j++){
+
+        }
     }
 
 }
