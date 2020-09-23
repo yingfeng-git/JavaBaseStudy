@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Algorithm/Algorithm.iml" filepath="$PROJECT_DIR$/Algorithm/Algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/ContainerClassDemo/ContainerClassDemo.iml" filepath="$PROJECT_DIR$/ContainerClassDemo/ContainerClassDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/JUC/JUC.iml" filepath="$PROJECT_DIR$/JUC/JUC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JVM/JVM.iml" filepath="$PROJECT_DIR$/JVM/JVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/SomeDemo/SomeDemo.iml" filepath="$PROJECT_DIR$/SomeDemo/SomeDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/dp/dp.iml" filepath="$PROJECT_DIR$/dp/dp.iml" />
     </modules>
