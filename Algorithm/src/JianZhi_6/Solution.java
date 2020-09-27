@@ -28,14 +28,14 @@ public class Solution {
     }
 
     // 第二个版本 用LinkedList来做，非递归，速度快很多但还是很慢，时间复杂度已经是N了，估计慢在LinkedList转int[]
-    public static int[] reversePrint2(ListNode head) {
-        List<Integer> res = new LinkedList<>();
-        while (head != null){
-            res.add(0, head.val);
-            head = head.next;
-        }
-        return res.stream().mapToInt(Integer::valueOf).toArray();
-    }
+//    public static int[] reversePrint2(ListNode head) {
+//        List<Integer> res = new LinkedList<>();
+//        while (head != null){
+//            res.add(0, head.val);
+//            head = head.next;
+//        }
+//        return res.stream().mapToInt(Integer::valueOf).toArray();
+//    }
 
     // 第三个版本 非递归, 先遍历一次获取链表的长度，然后再放到数组里。空间复杂度是nlogn
     public static int[] reversePrint3(ListNode head) {

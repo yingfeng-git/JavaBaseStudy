@@ -1,5 +1,6 @@
 package JianZhi_55;
 
+import java.util.Map;
 import java.util.Stack;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
@@ -11,27 +12,14 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
+ * 当初不会的题，现在直接秒的感觉太爽了
  */
 class Solution {
-    //对二叉树还不熟，太难了
-    public boolean isBalence(TreeNode tree){
-        Stack<TreeNode> treeStack = new Stack<>();
-        return false;
-    }
-
-    public TreeNode createTree(Integer[] data){
-        Stack<TreeNode> treeNodes = new Stack<>();
-        TreeNode h = new TreeNode(data[0]);
-        treeNodes.push(h);
-        for(int i = 1; i < data.length-1; i++){
-            ;
-        }
-        return null;
-    }
-
-    public static void main(String[] args) {
-
-
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
     }
 
 }

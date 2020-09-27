@@ -1,6 +1,9 @@
 package ClassLoaderDemo;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class MyClassLoader2 extends ClassLoader {
     /**
@@ -33,7 +36,6 @@ public class MyClassLoader2 extends ClassLoader {
 
         m = new MyClassLoader2();
         Class<?> cat3 = m.loadClass("pojo.Cat");
-
 
         System.out.println(cat1.hashCode());
         System.out.println(cat2.hashCode());
