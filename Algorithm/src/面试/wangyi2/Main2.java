@@ -4,43 +4,36 @@ import java.util.Arrays;
 
 public class Main2 {
     public static void main(String[] args) {
-        int N = 8;
+        int N = 5;
         int[][] matrix = new int[N][N];
-
+        int offset = 0;
         int data = 1;
-        for(int num = 0; num < N; num++) {
-            int x = num, y = num;
-            while(x < N && matrix[y][x] == 0){
-                matrix[y][x] = data++;
-                x++;
-            }
-            x--;
-            y++;
-
-            while(y < N && matrix[y][x] == 0){
-                matrix[y][x] = data++;
-                y++;
-            }
-            y--;
-            x--;
-
-            while(x >= 0 && matrix[y][x] == 0){
-                matrix[y][x] = data++;
-                x--;
-            }
-            x++;
-            y++;
-
-            while(y >= 0 && matrix[y][x] == 0){
+        while (data <= N * N) {
+            int x = offset;
+            int y = offset;
+            for (; y < N - offset; y++) {
                 matrix[x][y] = data++;
-                y--;
             }
-            if(data > (N * N)){
-                break;
+
+            x++;
+            for (; x < N - offset; x++) {
+                matrix[x][y - 1] = data++;
             }
+
+            y--;
+            for (; y > offset; y--) {
+                matrix[x - 1][y - 1] = data++;
+            }
+
+            x--;
+            for (; x > offset + 1; x--) {
+                matrix[x - 1][y] = data++;
+            }
+            offset++;
         }
-        for (int[] ints : matrix) {
-            System.out.println(Arrays.toString(ints));
+
+        for (int[] re : matrix) {
+            System.out.println(Arrays.toString(re));
         }
     }
 }
