@@ -9,13 +9,14 @@ public class KMP {
         next[1] = 0;
         // 从2开始
         int i = 2;
-        int cn = 0;
+        int cn = 0;   // cn是啥？
         while (i < m.length()) {
             // 如果新加入的元素与前一个next下标+1的元素相等，那么直接等于前一个元素的下标+1
             if(m.charAt(i-1) == m.charAt(cn)) {
                 next[i++] = ++cn;
 
             // 跳到比较的元素前一个的下标，然后在下一个循环再进行比较
+            // [7]a] ... [7]x]  如果a == x，那么next[i] = cn+1
             }else if(cn > 0){
                 cn = next[cn];
 
