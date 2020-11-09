@@ -7,6 +7,7 @@ import java.util.Stack;
  * 单调栈，求数组中所有元素左边和右边离它最近比它小的数
  * 首先建立一个栈，保证栈中从下到上是从小到大的
  * 遇到小的进行处理，大的压栈。
+ * 核心思想是找到计算的左右边界
  */
 public class MonotoneStack {
     public static int[][] process(int[] arr) {
